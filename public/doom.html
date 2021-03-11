@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="On this site you can play in famous old dos games in browser"
+      content="Play the id software classic FPS, DooM!"
     />
-    <meta
-      name="keywords"
-      content="4DPRINCE,ABUSE,ARKANOID,AV,BUDO,CAT,CDMAN2,CHESS,COLORADO,DAVE,DIGGER,DOOM,DOOM2,DTRACK,DUCKTALE,DUNE2,DYNA,EWJ2,FF2EGA,GOB1_EN,GOB1_RU,GOB2_EN,GOB2_RU,GOB3_EN,GOB3_RU,GODS,GOLDAXE,HERETIC,INDY,KE,LAMBORG,LR,METAL,MICRO,MINEBOMB,MK,PAC-MAN,PREHIST2,PREHISTO,SCORCH,SIMCITY,STARCON,STUNTS,SUPAPLEX,TDH,TETRIS,TIM,TOWER,TYRIAN2K,UGH,VIKINGS,WAR,WINTER,WOFE,WOLF3D,WORLD,XONIX"
-    />
-    <meta name="author" content="caiiiycuk" />
+    <meta name="keywords" content="DOOM" />
+    <meta name="author" content="twelveeyes" />
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -46,6 +43,13 @@
     <link rel="shortcut icon" href="assets/ico/favicon.png" />
   </head>
 
+  <style type="text/css">
+    canvas {
+      width: 640px;
+      height: 400px;
+    }
+  </style>
+
   <body
     data-spy="scroll"
     data-target=".bs-docs-sidebar"
@@ -78,48 +82,28 @@
               style="padding: 0; margin-top: 5px"
             ></div>
           </div>
-
-          <br />
-
-          <ul>
-            <li>Starting MS-DOS...</li>
-            <li>MS-DOS Version 6.22</li>
-            <li>&nbsp;</li>
-            <li>C:&#92;GAMES>dir</li>
-            <li>Directory of C:&#92;GAMES</li>
-
-            <li>
-              <div class="pull clearfix">
-                <h2 class="pull-left"><a href="..">..</a></h2>
-                <span class="pull-right"
-                  >&lt;DIR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07.05.1995&nbsp;&nbsp;16.56</span
-                >
-              </div>
-            </li>
-
-            <li>
-              <div class="pull clearfix">
-                <h2 class="pull-left"><a href="doom.html">DOOM.EXE</a></h2>
-                <span class="pull-right"
-                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07.05.1995&nbsp;&nbsp;11.10</span
-                >
-              </div>
-            </li>
-
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;57 Datei(en)</li>
-            <li>&nbsp;</li>
-            <li>C:&#92;GAMES>_</li>
-          </ul>
         </div>
-
-        <div class="span4"></div>
       </div>
     </div>
+
+    <canvas id="jsdos"></canvas>
 
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
+
+    <script src="js-dos.js"></script>
+
+    <script type="text/javascript">
+      Dos(document.getElementById("jsdos"), {
+        wdosboxUrl: "wdosbox-nosync.js",
+      }).ready((fs, main) => {
+        fs.extract("DOOM.zip").then(() => {
+          main(["-c", "cd DOOM", "-c", "DOOM.EXE"]);
+        });
+      });
+    </script>
   </body>
 </html>
