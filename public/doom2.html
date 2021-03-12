@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JS-DOS / GAMES / DOOM2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Play the id software classic FPS, DooM 2!"
+    />
+    <meta name="keywords" content="DOOM2" />
+    <meta name="author" content="twelveeyes" />
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="assets/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="assets/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="assets/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="assets/ico/apple-touch-icon-57-precomposed.png"
+    />
+    <link rel="shortcut icon" href="assets/ico/favicon.png" />
+  </head>
+
+  <style type="text/css">
+    .blinking-cursor {
+      font-weight: 100;
+      font-size: 30px;
+      color: #2e3d48;
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+
+    @keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-moz-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-webkit-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-ms-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-o-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    canvas {
+      width: 640px;
+      height: 400px;
+    }
+  </style>
+
+  <body
+    data-spy="scroll"
+    data-target=".bs-docs-sidebar"
+    style="visibility: hidden"
+  >
+    <br />
+
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          <ul>
+            <li>C:&#92;GAMES>cd DOOM2</li>
+            <li>
+              C:&#92;GAMES&#92;DOOM2>DOOM2.EXE
+              <a onclick="ci.fullscreen()">-fullscreen</a>
+            </li>
+            <li>&nbsp;</li>
+            <li>&nbsp;################################################</li>
+            <li>
+              &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+            </li>
+            <li>
+              &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starting DOOM ][: HELL
+              ON EARTH...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+            </li>
+            <li>
+              &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+            </li>
+            <li>&nbsp;################################################</li>
+            <li>&nbsp;</li>
+
+            <canvas id="jsdos"></canvas>
+
+            <li>&nbsp;</li>
+
+            <li>
+              <table class="table table-bordered">
+                <tr>
+                  <th>Forwards</th>
+                  <th>Backwards</th>
+                  <th>Turn Left</th>
+                  <th>Turn Right</th>
+                  <th>Strafe Left</th>
+                  <th>Strafe Right</th>
+                  <th>Run</th>
+                  <th>Fire</th>
+                  <th>Use</th>
+                  <th>Automap</th>
+                </tr>
+                <tr>
+                  <th>&#8593;</th>
+                  <th>&#8595;</th>
+                  <th>&#8592;</th>
+                  <th>&#8594;</th>
+                  <th>A</th>
+                  <th>D</th>
+                  <th>Space</th>
+                  <th>S</th>
+                  <th>W</th>
+                  <th>Tab</th>
+                </tr>
+              </table>
+            </li>
+
+            <li>&nbsp;</li>
+
+            <li>
+              C:&#92;GAMES&#92;DOOM2><a href="games.html">..</a
+              ><span class="blinking-cursor">&#9646;</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="span4"></div>
+      </div>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js" defer></script>
+    <script src="assets/js/bootstrap.min.js" defer></script>
+
+    <script src="js-dos/js-dos.js"></script>
+
+    <script type="text/javascript">
+      Dos(document.getElementById("jsdos"), {
+        wdosboxUrl: "js-dos/wdosbox-nosync.js",
+      }).ready((fs, main) => {
+        fs.extract("games/DOOM2.zip").then(() => {
+          main(["-c", "cd DOOM2", "-c", "DOOM2.EXE"]).then((ci) => {
+            window.ci = ci;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
