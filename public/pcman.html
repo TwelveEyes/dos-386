@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>JS-DOS / GAMES / GALAXIAN</title>
+    <title>JS-DOS / GAMES / PCMAN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Play the Namco classic arcade shooter, GALAXIAN!"
+      content="Play the Orion Software PC conversion of the coin-op classic arcade game, PAC-MAN!"
     />
-    <meta name="keywords" content="GALAXIAN" />
+    <meta name="keywords" content="PCMAN" />
     <meta name="author" content="twelveeyes" />
 
     <!-- Le styles -->
@@ -122,9 +122,9 @@
       <div class="row">
         <div class="span8">
           <ul>
-            <li>C:&#92;GAMES>cd GALAXIAN</li>
+            <li>C:&#92;GAMES>cd PCMAN</li>
             <li>
-              C:&#92;GAMES&#92;GALAXIAN>GALAXIAN.COM
+              C:&#92;GAMES&#92;PCMAN>PCMAN.COM
               <a onclick="ci.fullscreen()">-fullscreen</a>
             </li>
             <li>&nbsp;</li>
@@ -133,8 +133,8 @@
               &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
             </li>
             <li>
-              &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starting
-              GALAXIAN...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+              &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starting
+              PCMAN...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
             </li>
             <li>
               &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
@@ -149,14 +149,16 @@
             <li>
               <table class="table table-bordered">
                 <tr>
+                  <th>Up</th>
+                  <th>Down</th>
                   <th>Left</th>
                   <th>Right</th>
-                  <th>Fire</th>
                 </tr>
                 <tr>
+                  <th>&#8593;</th>
+                  <th>&#8595;</th>
                   <th>&#8592;</th>
                   <th>&#8594;</th>
-                  <th>Space</th>
                 </tr>
               </table>
             </li>
@@ -164,7 +166,7 @@
             <li>&nbsp;</li>
 
             <li>
-              C:&#92;GAMES&#92;GALAXIAN><a href="games.html">..</a
+              C:&#92;GAMES&#92;PCMAN><a href="games.html">..</a
               ><span class="blinking-cursor">&#9646;</span>
             </li>
           </ul>
@@ -184,15 +186,12 @@
 
     <script type="text/javascript">
       Dos(document.getElementById("jsdos"), {
-        cycles: 700,
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       }).ready((fs, main) => {
-        fs.extract("games/GALAXIAN.zip", "/GALAXIAN").then(() => {
-          main(["-c", "cd GALAXIAN/GALAXIAN", "-c", "GALAXIAN.COM"]).then(
-            (ci) => {
-              window.ci = ci;
-            }
-          );
+        fs.extract("games/PCMAN.zip", "/PCMAN").then(() => {
+          main(["-c", "cd PCMAN/PCMAN", "-c", "PCMANv2.COM"]).then((ci) => {
+            window.ci = ci;
+          });
         });
       });
     </script>
