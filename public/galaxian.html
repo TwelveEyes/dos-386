@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>JS-DOS / GAMES</title>
+    <title>JS-DOS / GAMES / GALAXIAN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="MS-DOS styled index of classic DOS games"
+      content="Play the Namco classic arcade shooter, GALAXIAN!"
     />
-    <meta name="keywords" content="GAMES" />
+    <meta name="keywords" content="GALAXIAN" />
     <meta name="author" content="twelveeyes" />
 
     <!-- Le styles -->
@@ -104,6 +104,11 @@
         color: white;
       }
     }
+
+    canvas {
+      width: 640px;
+      height: 400px;
+    }
   </style>
 
   <body
@@ -117,49 +122,49 @@
       <div class="row">
         <div class="span8">
           <ul>
-            <li>C:&#92;>cd GAMES</li>
-            <li>C:&#92;GAMES>dir</li>
+            <li>C:&#92;GAMES>cd GALAXIAN</li>
+            <li>
+              C:&#92;GAMES&#92;GALAXIAN>GALAXIAN.EXE
+              <a onclick="ci.fullscreen()">-fullscreen</a>
+            </li>
             <li>&nbsp;</li>
-            <li>&nbsp;Directory of C:&#92;GAMES</li>
+            <li>&nbsp;################################################</li>
+            <li>
+              &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+            </li>
+            <li>
+              &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starting
+              GALAXIAN...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+            </li>
+            <li>
+              &nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#
+            </li>
+            <li>&nbsp;################################################</li>
+            <li>&nbsp;</li>
+
+            <canvas id="jsdos"></canvas>
+
             <li>&nbsp;</li>
 
             <li>
-              <div class="pull clearfix">
-                <h2 class="pull-left"><a href="index.html">..</a></h2>
-                <span class="pull-right"
-                  >&lt;DIR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05.20.1995&nbsp;&nbsp;15.57</span
-                >
-              </div>
-            </li>
-            <li>
-              <div class="pull clearfix">
-                <h2 class="pull-left"><a href="doom.html">DOOM</a></h2>
-                <span class="pull-right"
-                  >&lt;DIR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04.30.1995&nbsp;&nbsp;14.31</span
-                >
-              </div>
-            </li>
-            <li>
-              <div class="pull clearfix">
-                <h2 class="pull-left"><a href="doom2.html">DOOM2</a></h2>
-                <span class="pull-right"
-                  >&lt;DIR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.10.1994&nbsp;&nbsp;14.37</span
-                >
-              </div>
-            </li>
-            <li>
-              <div class="pull clearfix">
-                <h2 class="pull-left"><a href="galaxian.html">GALAXIAN</a></h2>
-                <span class="pull-right"
-                  >&lt;DIR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04.05.1980&nbsp;&nbsp;07.57</span
-                >
-              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <th>Left</th>
+                  <th>Right</th>
+                  <th>Fire</th>
+                </tr>
+                <tr>
+                  <th>&#8592;</th>
+                  <th>&#8594;</th>
+                  <th>Space</th>
+                </tr>
+              </table>
             </li>
 
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 Dir(s)</li>
             <li>&nbsp;</li>
+
             <li>
-              C:&#92;GAMES><a href="help.html">help</a
+              C:&#92;GAMES&#92;GALAXIAN><a href="games.html">..</a
               ><span class="blinking-cursor">&#9646;</span>
             </li>
           </ul>
@@ -174,5 +179,22 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
+
+    <script src="js-dos/js-dos.js"></script>
+
+    <script type="text/javascript">
+      Dos(document.getElementById("jsdos"), {
+        cycles: 700,
+        wdosboxUrl: "js-dos/wdosbox-nosync.js",
+      }).ready((fs, main) => {
+        fs.extract("games/GALAXIAN.zip", "/GALAXIAN").then(() => {
+          main(["-c", "cd GALAXIAN/GALAXIAN", "-c", "GALAXIAN.COM"]).then(
+            (ci) => {
+              window.ci = ci;
+            }
+          );
+        });
+      });
+    </script>
   </body>
 </html>
