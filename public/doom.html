@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>JS-DOS / GAMES</title>
+    <title>JS-DOS / GAMES / DOOM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -44,6 +44,67 @@
   </head>
 
   <style type="text/css">
+    .blinking-cursor {
+      font-weight: 100;
+      font-size: 30px;
+      color: #2e3d48;
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+
+    @keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-moz-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-webkit-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-ms-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-o-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
     canvas {
       width: 640px;
       height: 400px;
@@ -60,33 +121,61 @@
     <div class="container">
       <div class="row">
         <div class="span8">
-          <div class="hero-unit">
-            <h1>Welcome to JS-DOS v0.74</h1>
-            For short introduction for new users type:
-            <a href="/intro/">INTRO</a><br />
-            Choose one of the program or directory listed below.<br /><br />
+          <ul>
+            <li>C:&#92;GAMES>cd DOOM</li>
+            <li>
+              C:&#92;GAMES&#92;DOOM>DOOM.EXE
+              <a onclick="ci.fullscreen()">-fullscreen</a>
+            </li>
+            <li>&nbsp;</li>
+            <li>&nbsp;Starting THE ULTIMATE DOOM...</li>
+            <li>&nbsp;</li>
 
-            HAVE FUN!<br />
-            Powered by
-            <a href="https://github.com/dreamlayers/em-dosbox/">em-dosbox</a
-            ><br />
-            Support on
-            <a href="https://github.com/caiiiycuk/js-dos.com">github</a>, 2014
-            <br />
-            <div
-              class="yashare-auto-init"
-              data-yashareL10n="en"
-              data-yashareType="small"
-              data-yashareQuickServices="vkontakte,facebook,twitter,gplus"
-              data-yashareTheme="counter"
-              style="padding: 0; margin-top: 5px"
-            ></div>
-          </div>
+            <canvas id="jsdos"></canvas>
+
+            <li>&nbsp;</li>
+
+            <li>
+              <table class="table table-bordered">
+                <tr>
+                  <th>Forwards</th>
+                  <th>Backwards</th>
+                  <th>Turn Left</th>
+                  <th>Turn Right</th>
+                  <th>Strafe Left</th>
+                  <th>Strafe Right</th>
+                  <th>Run</th>
+                  <th>Fire</th>
+                  <th>Use</th>
+                  <th>Automap</th>
+                </tr>
+                <tr>
+                  <th>&#8593;</th>
+                  <th>&#8595;</th>
+                  <th>&#8592;</th>
+                  <th>&#8594;</th>
+                  <th>A</th>
+                  <th>D</th>
+                  <th>Space</th>
+                  <th>S</th>
+                  <th>W</th>
+                  <th>Tab</th>
+                </tr>
+              </table>
+            </li>
+
+            <li>&nbsp;</li>
+
+            <li>
+              C:&#92;GAMES&#92;DOOM><a href="games.html">..</a
+              ><span class="blinking-cursor">&#9646;</span>
+            </li>
+          </ul>
         </div>
+
+        <div class="span4"></div>
       </div>
     </div>
-
-    <canvas id="jsdos"></canvas>
 
     <!-- Le javascript
     ================================================== -->
@@ -101,7 +190,9 @@
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       }).ready((fs, main) => {
         fs.extract("games/DOOM.zip").then(() => {
-          main(["-c", "cd DOOM", "-c", "DOOM.EXE"]);
+          main(["-c", "cd DOOM", "-c", "DOOM.EXE"]).then((ci) => {
+            window.ci = ci;
+          });
         });
       });
     </script>

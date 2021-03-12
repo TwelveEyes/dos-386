@@ -2,17 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>JS-DOS / GAMES</title>
+    <title>JS-DOS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="On this site you can play in famous old dos games in browser"
-    />
-    <meta
-      name="keywords"
-      content="4DPRINCE,ABUSE,ARKANOID,AV,BUDO,CAT,CDMAN2,CHESS,COLORADO,DAVE,DIGGER,DOOM,DOOM2,DTRACK,DUCKTALE,DUNE2,DYNA,EWJ2,FF2EGA,GOB1_EN,GOB1_RU,GOB2_EN,GOB2_RU,GOB3_EN,GOB3_RU,GODS,GOLDAXE,HERETIC,INDY,KE,LAMBORG,LR,METAL,MICRO,MINEBOMB,MK,PAC-MAN,PREHIST2,PREHISTO,SCORCH,SIMCITY,STARCON,STUNTS,SUPAPLEX,TDH,TETRIS,TIM,TOWER,TYRIAN2K,UGH,VIKINGS,WAR,WINTER,WOFE,WOLF3D,WORLD,XONIX"
-    />
-    <meta name="author" content="caiiiycuk" />
+    <meta name="description" content="MS-DOS styled splash screen" />
+    <meta name="keywords" content="JS-DOS" />
+    <meta name="author" content="twelveeyes" />
 
     <!-- Le styles -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -46,6 +40,69 @@
     <link rel="shortcut icon" href="assets/ico/favicon.png" />
   </head>
 
+  <style type="text/css">
+    .blinking-cursor {
+      font-weight: 100;
+      font-size: 30px;
+      color: #2e3d48;
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+
+    @keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-moz-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-webkit-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-ms-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+
+    @-o-keyframes blink {
+      from,
+      to {
+        color: transparent;
+      }
+      50% {
+        color: white;
+      }
+    }
+  </style>
+
   <body
     data-spy="scroll"
     data-target=".bs-docs-sidebar"
@@ -56,59 +113,90 @@
     <div class="container">
       <div class="row">
         <div class="span8">
-          <div class="hero-unit">
-            <h1>Welcome to JS-DOS v0.74</h1>
-            For short introduction for new users type:
-            <a href="/intro/">INTRO</a><br />
-            Choose one of the program or directory listed below.<br /><br />
-
-            HAVE FUN!<br />
-            Powered by
-            <a href="https://github.com/dreamlayers/em-dosbox/">em-dosbox</a
-            ><br />
-            Support on
-            <a href="https://github.com/caiiiycuk/js-dos.com">github</a>, 2014
-            <br />
-            <div
-              class="yashare-auto-init"
-              data-yashareL10n="en"
-              data-yashareType="small"
-              data-yashareQuickServices="vkontakte,facebook,twitter,gplus"
-              data-yashareTheme="counter"
-              style="padding: 0; margin-top: 5px"
-            ></div>
-          </div>
-
-          <br />
-
           <ul>
             <li>Starting MS-DOS...</li>
-            <li>MS-DOS Version 6.22</li>
             <li>&nbsp;</li>
-            <li>C:&#92;GAMES>dir</li>
-            <li>Directory of C:&#92;GAMES</li>
+            <li>&nbsp;</li>
+            <li>HIMEM is testing extended memory...done.</li>
+            <li>&nbsp;</li>
+            <li>C:&#92;>C:&#92;DOS&#92;SMARTDRV.EXE &#47;X</li>
+            <li>&nbsp;</li>
+            <li>MODE prepare code page function completed</li>
+            <li>&nbsp;</li>
+            <li>MODE select code page function completed</li>
+            <li>C:&#92;>dir</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;Volume in drive C is MS-DOS_6</li>
+            <li>&nbsp;Volume Serial Number is 40B4-7F23</li>
+            <li>&nbsp;Directory of C:&#92;</li>
+            <li>&nbsp;</li>
 
             <li>
               <div class="pull clearfix">
-                <h2 class="pull-left"><a href="..">..</a></h2>
+                <h2 class="pull-left">DOS</h2>
                 <span class="pull-right"
-                  >&lt;DIR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07.05.1995&nbsp;&nbsp;16.56</span
+                  >&lt;DIR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05.20.1995&nbsp;&nbsp;15.57</span
+                >
+              </div>
+            </li>
+            <li>
+              <div class="pull clearfix">
+                <h2 class="pull-left"><a href="games.html">GAMES</a></h2>
+                <span class="pull-right"
+                  >&lt;DIR&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;03.11.2021&nbsp;&nbsp;14.10</span
+                >
+              </div>
+            </li>
+            <li>
+              <div class="pull clearfix">
+                <h2 class="pull-left">COMMAND</h2>
+                <span class="pull-right"
+                  >COM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;54&nbsp;645&nbsp;&nbsp;05.31.1995&nbsp;&nbsp;06.22</span
+                >
+              </div>
+            </li>
+            <li>
+              <div class="pull clearfix">
+                <h2 class="pull-left">WINA20</h2>
+                <span class="pull-right"
+                  >386&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;349&nbsp;&nbsp;05.31.1995&nbsp;&nbsp;06.22</span
+                >
+              </div>
+            </li>
+            <li>
+              <div class="pull clearfix">
+                <h2 class="pull-left">CONFIG</h2>
+                <span class="pull-right"
+                  >SYS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;144&nbsp;&nbsp;05.20.1995&nbsp;&nbsp;15.57</span
+                >
+              </div>
+            </li>
+            <li>
+              <div class="pull clearfix">
+                <h2 class="pull-left">AUTOEXEC</h2>
+                <span class="pull-right"
+                  >BAT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;188&nbsp;&nbsp;05.20.1995&nbsp;&nbsp;15.57</span
                 >
               </div>
             </li>
 
             <li>
-              <div class="pull clearfix">
-                <h2 class="pull-left"><a href="doom.html">DOOM.EXE</a></h2>
-                <span class="pull-right"
-                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07.05.1995&nbsp;&nbsp;11.10</span
-                >
-              </div>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 File(s)
+              <span class="pull-right"
+                >64&nbsp;326&nbsp;bytes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              >
             </li>
-
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;57 Datei(en)</li>
+            <li>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 Dir(s)
+              <span class="pull-right"
+                >24&nbsp;760&nbsp;320&nbsp;bytes&nbsp;free&nbsp;</span
+              >
+            </li>
             <li>&nbsp;</li>
-            <li>C:&#92;GAMES>_</li>
+            <li>
+              C:&#92;><a href="help.html">help</a
+              ><span class="blinking-cursor">&#9646;</span>
+            </li>
           </ul>
         </div>
 
