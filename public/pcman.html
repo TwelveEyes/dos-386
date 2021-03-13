@@ -186,14 +186,17 @@
 
     <script type="text/javascript">
       Dos(document.getElementById("jsdos"), {
+        onerror: (error) => console.error(error),
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
-      }).ready((fs, main) => {
-        fs.extract("games/PCMAN.zip", "/PCMAN").then(() => {
-          main(["-c", "cd PCMAN/PCMAN", "-c", "PCMANv2.COM"]).then((ci) => {
-            window.ci = ci;
+      })
+        .ready((fs, main) => {
+          fs.extract("games/PCMAN.zip", "/PCMAN").then(() => {
+            main(["-c", "cd PCMAN/PCMAN", "-c", "PCMANv2.COM"]).then((ci) => {
+              window.ci = ci;
+            });
           });
-        });
-      });
+        })
+        .catch((error) => console.error(error));
     </script>
   </body>
 </html>
