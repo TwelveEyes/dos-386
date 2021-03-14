@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>DOS-386 / GAMES / DOOM2</title>
+    <title>DOS-386 / GAMES / WOLF3D</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Play the id software classic FPS, DooM 2!"
+      content="Play the id software classic FPS, WOLFENSTEIN 3D!"
     />
-    <meta name="keywords" content="DOOM2" />
+    <meta name="keywords" content="WOLF3D" />
     <meta name="author" content="twelveeyes" />
 
     <!-- Le styles -->
@@ -47,7 +47,8 @@
   <style type="text/css">
     canvas {
       width: 640px;
-      height: 400px;
+      height: 480px;
+      cursor: none;
     }
   </style>
 
@@ -90,22 +91,22 @@
           <ul>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
-            <li>C:&#92;GAMES>cd DOOM2</li>
+            <li>C:&#92;GAMES>cd WOLF3D</li>
             <li>
-              C:&#92;GAMES&#92;DOOM2>DOOM2.EXE
+              C:&#92;GAMES&#92;WOLF3D>WOLF3D.EXE
               <a onclick="ci.fullscreen()">-fullscreen</a>
             </li>
             <li>&nbsp;</li>
             <div class="hero-unit">
               <ul>
                 <li>&nbsp;</li>
-                <h2>Starting DOOM ][: HELL ON EARTH...</h2>
+                <h2>Starting WOLF3D SHAREWARE...</h2>
                 <li>&nbsp;</li>
               </ul>
             </div>
             <li>&nbsp;</li>
 
-            <canvas id="jsdos"></canvas>
+            <canvas id="jsdos" oncontextmenu="return false;"></canvas>
 
             <li>&nbsp;</li>
 
@@ -116,24 +117,16 @@
                   <th>Backwards</th>
                   <th>Turn Left</th>
                   <th>Turn Right</th>
-                  <th>Strafe Left</th>
-                  <th>Strafe Right</th>
-                  <th>Run</th>
                   <th>Fire</th>
                   <th>Use</th>
-                  <th>Automap</th>
                 </tr>
                 <tr>
                   <th>&#8593;</th>
                   <th>&#8595;</th>
                   <th>&#8592;</th>
                   <th>&#8594;</th>
-                  <th>A</th>
-                  <th>D</th>
+                  <th>Ctrl</th>
                   <th>Space</th>
-                  <th>S</th>
-                  <th>W</th>
-                  <th>Tab</th>
                 </tr>
               </table>
             </li>
@@ -141,7 +134,7 @@
             <li>&nbsp;</li>
 
             <li>
-              C:&#92;GAMES&#92;DOOM2>cd <a href="games.html">..</a
+              C:&#92;GAMES&#92;WOLF3D>cd <a href="games.html">..</a
               ><span class="blinking-cursor">&#9646;</span>
             </li>
           </ul>
@@ -166,8 +159,8 @@
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       })
         .ready((fs, main) => {
-          fs.extract("games/DOOM2.ZIP", "/DOOM2").then(() => {
-            main(["-c", "cd DOOM2/DOOM2", "-c", "DOOM2.EXE"]).then((ci) => {
+          fs.extract("games/WOLF3D.ZIP", "/WOLF3D").then(() => {
+            main(["-c", "cd WOLF3D/WOLF3D", "-c", "WOLF3D.EXE"]).then((ci) => {
               window.ci = ci;
             });
           });
