@@ -156,7 +156,7 @@
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       })
         .ready((fs, main) => {
-          fs.extract("games/VROIDS.zip", "/VROIDS").then(() => {
+          fs.extract("games/VROIDS.ZIP", "/VROIDS").then(() => {
             main(["-c", "cd VROIDS/VROIDS", "-c", "ROIDS.EXE"]).then((ci) => {
               window.ci = ci;
             });

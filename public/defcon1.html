@@ -150,7 +150,7 @@
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       })
         .ready((fs, main) => {
-          fs.extract("games/DEFCON1.zip", "/DEFCON1").then(() => {
+          fs.extract("games/DEFCON1.ZIP", "/DEFCON1").then(() => {
             main(["-c", "cd DEFCON1/DEFCON1", "-c", "DEFCON1.EXE"]).then(
               (ci) => {
                 window.ci = ci;

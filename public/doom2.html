@@ -165,7 +165,7 @@
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       })
         .ready((fs, main) => {
-          fs.extract("games/DOOM2.zip", "/DOOM2").then(() => {
+          fs.extract("games/DOOM2.ZIP", "/DOOM2").then(() => {
             main(["-c", "cd DOOM2/DOOM2", "-c", "DOOM2.EXE"]).then((ci) => {
               window.ci = ci;
             });

@@ -154,7 +154,7 @@
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       })
         .ready((fs, main) => {
-          fs.extract("games/PACPC2.zip", "/PACPC2").then(() => {
+          fs.extract("games/PACPC2.ZIP", "/PACPC2").then(() => {
             main(["-c", "cd PACPC2/PACPC2", "-c", "PACPC2.EXE"]).then((ci) => {
               window.ci = ci;
             });

@@ -153,7 +153,7 @@
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       })
         .ready((fs, main) => {
-          fs.extract("games/GALAXIAN.zip", "/GALAXIAN").then(() => {
+          fs.extract("games/GALAXIAN.ZIP", "/GALAXIAN").then(() => {
             main(["-c", "cd GALAXIAN/GALAXIAN", "-c", "GALAXIAN.COM"]).then(
               (ci) => {
                 window.ci = ci;
