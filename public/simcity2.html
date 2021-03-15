@@ -8,7 +8,7 @@
       name="description"
       content="Play the Maxis classic city-building simulation, SIMCITY 2000!"
     />
-    <meta name="keywords" content="SIMCITY2K" />
+    <meta name="keywords" content="SIMCITY2" />
     <meta name="author" content="twelveeyes" />
 
     <!-- Le styles -->
@@ -91,9 +91,9 @@
           <ul>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
-            <li>C:&#92;GAMES>cd SIMCITY2K</li>
+            <li>C:&#92;GAMES>cd SIMCITY2</li>
             <li>
-              C:&#92;GAMES&#92;SIMCITY2K>SC2000.EXE
+              C:&#92;GAMES&#92;SIMCITY2>SC2000.EXE
               <a onclick="fullscreen()">-fullscreen</a>
             </li>
             <li>&nbsp;</li>
@@ -117,7 +117,7 @@
             <li>&nbsp;</li>
 
             <li>
-              C:&#92;GAMES&#92;SIMCITY2K>cd <a href="games.html">..</a
+              C:&#92;GAMES&#92;SIMCITY2>cd <a href="games.html">..</a
               ><span class="blinking-cursor">&#9646;</span>
             </li>
           </ul>
@@ -141,8 +141,8 @@
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
         autolock: true,
       }).ready((fs, main) => {
-        fs.extract("games/SIMCITY2K.ZIP", "/SIMCITY2K").then(() => {
-          main(["-c", "cd SIMCITY2K/SIMCITY2K", "-c", "SC2000.EXE"]).then(
+        fs.extract("games/SIMCITY2.ZIP", "/SIMCITY2").then(() => {
+          main(["-c", "cd SIMCITY2/SIMCITY2", "-c", "SC2000.EXE"]).then(
             (ci) => {
               window.ci = ci;
             }
