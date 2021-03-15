@@ -93,7 +93,7 @@
             <li>C:&#92;GAMES>cd DOOM2</li>
             <li>
               C:&#92;GAMES&#92;DOOM2>DOOM2.EXE
-              <a onclick="ci.fullscreen()">-fullscreen</a>
+              <a onclick="fullscreen()">-fullscreen</a>
             </li>
             <li>&nbsp;</li>
             <div class="hero-unit">
@@ -162,21 +162,20 @@
     <script src="assets/js/bootstrap.min.js" defer></script>
 
     <script src="js-dos/js-dos.js"></script>
+    <script src="js-misc/js-fullscreen.js"></script>
 
     <script type="text/javascript">
       Dos(document.getElementById("jsdos"), {
-        autolock: true,
-        onerror: (error) => console.error(error),
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
-      })
-        .ready((fs, main) => {
-          fs.extract("games/DOOM2.ZIP", "/DOOM2").then(() => {
-            main(["-c", "cd DOOM2/DOOM2", "-c", "DOOM2.EXE"]).then((ci) => {
-              window.ci = ci;
-            });
+        autolock: true,
+        cycles: "max",
+      }).ready((fs, main) => {
+        fs.extract("games/DOOM2.ZIP", "/DOOM2").then(() => {
+          main(["-c", "cd DOOM2/DOOM2", "-c", "DOOM2.EXE"]).then((ci) => {
+            window.ci = ci;
           });
-        })
-        .catch((error) => console.error(error));
+        });
+      });
     </script>
   </body>
 </html>

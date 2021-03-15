@@ -94,7 +94,7 @@
             <li>C:&#92;GAMES>cd CRIME</li>
             <li>
               C:&#92;GAMES&#92;CRIME>CRIME.EXE
-              <a onclick="ci.fullscreen()">-fullscreen</a>
+              <a onclick="fullscreen()">-fullscreen</a>
             </li>
             <li>&nbsp;</li>
             <div class="hero-unit">
@@ -151,21 +151,19 @@
     <script src="assets/js/bootstrap.min.js" defer></script>
 
     <script src="js-dos/js-dos.js"></script>
+    <script src="js-misc/js-fullscreen.js"></script>
 
     <script type="text/javascript">
       Dos(document.getElementById("jsdos"), {
-        autolock: true,
-        onerror: (error) => console.error(error),
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
-      })
-        .ready((fs, main) => {
-          fs.extract("games/CRIME.ZIP", "/CRIME").then(() => {
-            main(["-c", "cd CRIME/CRIME", "-c", "CRIME.EXE"]).then((ci) => {
-              window.ci = ci;
-            });
+        autolock: true,
+      }).ready((fs, main) => {
+        fs.extract("games/CRIME.ZIP", "/CRIME").then(() => {
+          main(["-c", "cd CRIME/CRIME", "-c", "CRIME.EXE"]).then((ci) => {
+            window.ci = ci;
           });
-        })
-        .catch((error) => console.error(error));
+        });
+      });
     </script>
   </body>
 </html>
