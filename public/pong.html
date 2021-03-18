@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>DOS-386 / GAMES / PAC PC 2</title>
+    <title>DOS-386 / GAMES / PLBM PONG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Play the PC conversion of the coin-op classic arcade game, PAC-MAN!"
+      content="Play the PLBM Games adaptation of the classic game, PONG!"
     />
-    <meta name="keywords" content="PACPC2" />
+    <meta name="keywords" content="PONG" />
     <meta name="author" content="twelveeyes" />
 
     <!-- Le styles -->
@@ -91,16 +91,16 @@
           <ul>
             <li>&nbsp;</li>
             <li>&nbsp;</li>
-            <li>C:&#92;GAMES>cd PACPC2</li>
+            <li>C:&#92;GAMES>cd PONG</li>
             <li>
-              C:&#92;GAMES&#92;PACPC2>PACPC2.EXE
+              C:&#92;GAMES&#92;PONG>PLBMPONG.EXE
               <a href="#" onclick="fullscreen()">-fullscreen</a>
             </li>
             <li>&nbsp;</li>
             <div class="hero-unit">
               <ul>
                 <li>&nbsp;</li>
-                <h2>Starting PAC PC II...</h2>
+                <h2>Starting PLBM PONG SHAREWARE...</h2>
                 <li>&nbsp;</li>
               </ul>
             </div>
@@ -129,7 +129,7 @@
             <li>&nbsp;</li>
 
             <li>
-              C:&#92;GAMES&#92;PACPC2>cd <a href="games.html">..</a
+              C:&#92;GAMES&#92;PONG>cd <a href="games.html">..</a
               ><span class="blinking-cursor">&#9646;</span>
             </li>
           </ul>
@@ -152,8 +152,8 @@
       Dos(document.getElementById("jsdos"), {
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
       }).ready((fs, main) => {
-        fs.extract("games/PACPC2.ZIP", "/PACPC2").then(() => {
-          main(["-c", "cd PACPC2/PACPC2", "-c", "PACPC2.EXE"]).then((ci) => {
+        fs.extract("games/PONG.ZIP", "/PONG").then(() => {
+          main(["-c", "cd PONG/PONG", "-c", "PLBMPONG.EXE"]).then((ci) => {
             window.ci = ci;
           });
         });
