@@ -110,6 +110,11 @@
             <li>&nbsp;</li>
 
             <li>
+              Click inside the game window for mouse capture (lock mouse inside
+              the game, press ESC to release)!
+            </li>
+            <li>&nbsp;</li>
+            <li>
               <table class="table table-bordered">
                 <tr>
                   <th>Up</th>
@@ -151,6 +156,7 @@
     <script type="text/javascript">
       Dos(document.getElementById("jsdos"), {
         wdosboxUrl: "js-dos/wdosbox-nosync.js",
+        autolock: true,
       }).ready((fs, main) => {
         fs.extract("games/PONG.ZIP", "/PONG").then(() => {
           main(["-c", "cd PONG/PONG", "-c", "PLBMPONG.EXE"]).then((ci) => {
